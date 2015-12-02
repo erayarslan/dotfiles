@@ -13,6 +13,44 @@ set shiftwidth=2
 set softtabstop=2
 set expandtab
 
+" Omni
+set omnifunc=syntaxcomplete#Complete
+"
+autocmd FileType python set omnifunc=pythoncomplete#Complete
+autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
+autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+autocmd FileType c set omnifunc=ccomplete#Complete
+
+autocmd VimEnter * wincmd w
+
+function! NERDTreeQuit()
+  redir => buffersoutput
+  silent buffers
+  redir END
+"        1BufNo  2Mods.     3File           4LineNo
+  let pattern = '^\s*\(\d\+\)\(.....\) "\(.*\)"\s\+line \(\d\+\)$'
+  let windowfound = 0
+
+  for bline in split(buffersoutput, "\n")
+    let m = matchlist(bline, pattern)
+
+    if (len(m) > 0)
+      if (m[2] =~ '..a..')
+        let windowfound = 1
+      endif
+    endif
+  endfor
+
+  if (!windowfound)
+    quitall
+  endif
+endfunction
+
+autocmd WinEnter * call NERDTreeQuit()
+
 " Show extra whitespace
 set list listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 
@@ -30,8 +68,9 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'scrooloose/syntastic'
 let g:syntastic_check_on_open=1
 
-Plugin 'marijnh/tern_for_vim'
 Plugin 'scrooloose/nerdtree'
+let NERDTreeMinimalUI=1
+
 Plugin 'tpope/vim-fugitive'
 Plugin 'bling/vim-airline'
 
