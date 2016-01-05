@@ -50,13 +50,20 @@ Plugin 'jelera/vim-javascript-syntax'
 Plugin 'pangloss/vim-javascript'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'Raimondi/delimitMate'
+
 Plugin 'scrooloose/syntastic'
 let g:syntastic_check_on_open=1
+
 Plugin 'scrooloose/nerdtree'
 let NERDTreeMinimalUI=1
+
 Plugin 'tpope/vim-fugitive'
 Plugin 'bling/vim-airline'
+
 Plugin 'ternjs/tern_for_vim'
+let g:tern_show_argument_hints='on_hold'
+let g:tern_map_keys=1
+
 Plugin 'Valloric/YouCompleteMe'
 let g:ycm_add_preview_to_completeopt=0
 let g:ycm_confirm_extra_conf=0

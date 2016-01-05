@@ -1,9 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =7
-let g:netrw_dirhist_1='/Users/erayarslan'
-let g:netrw_dirhist_2='/Users/erayarslan/Projects/social-node-adapter'
-let g:netrw_dirhist_3='/Users/erayarslan/Projects/social-node-adapter/lib'
-let g:netrw_dirhist_4='/Users/erayarslan/Projects/social-node-adapter'
-let g:netrw_dirhist_5='/Users/erayarslan/Projects/social-node-adapter/app'
-let g:netrw_dirhist_6='/Users/erayarslan/Projects/social-node-adapter/app/services'
-let g:netrw_dirhist_7='/Users/erayarslan/Projects/social-node-adapter'
