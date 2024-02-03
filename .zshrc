@@ -3,6 +3,8 @@ if [[ $TERMINAL_EMULATOR != JetBrains* ]]; then
   ZSH_TMUX_AUTOSTART=true
 fi
 
+export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin":$PATH
+
 export HISTFILESIZE=1000000000
 export HISTSIZE=1000000000
 
